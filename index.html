@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata and links to CSS files -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximus Ghosh Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <!-- Loading screen with pixel loader animation -->
+    <div id="loading-screen">
+        <div class="pixel-loader">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div>
+    </div>
+
+    <!-- Canvas element for noisy background effect -->
+    <canvas id="noisyCanvas"></canvas>
+
+    <!-- Header section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#homepage">
+                    <img src="./assets/logo.png" alt="Maximus Ghosh">
+                </a>
+            </div>
+            <!-- Center navigation links -->
+            <nav id="center-nav">
+                <ul class="nav-links">
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#projects">projects</a></li>
+                </ul>
+            </nav>
+            <!-- Right navigation links -->
+            <nav id="right-nav">
+                <ul class="nav-links">
+                    <li><a href="https://www.linkedin.com/in/maximus-ghosh-b7234b237/" target="_blank">linkedin</a></li>
+                    <li><a href="#resume" target="_blank">resume</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger icon for mobile view -->
+            <div class="hamburger-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main container with title -->
+    <div class="container" id="homepage">
+        <div class="title">
+            <div class="main-title">
+                <span class="title-part-left">Maximus</span><br>
+                <span class="title-part-right">Ghosh</span>
+            </div>
+            <div class="right-images">
+                <img src="./assets/mainstar.png" alt="Large Star" class="decor-image large-star">
+                <img src="./assets/substar.png" alt="Medium Star" class="decor-image medium-star">
+                <img src="./assets/minorstar.png" alt="Small Star" class="decor-image small-star">
+            </div>
+        </div>
+        <!-- Added paragraph below the title -->
+        <div class="subtitle">
+            <p>20 y.o. aspiring developer and designer</p>
+        </div>
+    </div>
+    <!-- About section -->
+    <section id="about" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">whoami?</h1>
+            </div>
+            <div class="about-content">
+                <!-- Profile picture -->
+                <div class="about-left">
+                    <img src="./assets/maxold.png" alt="Profile Picture" class="profile-pic">
+                </div>
+                <!-- About text -->
+                <div class="about-right">
+                    <pre class="about-text">
+<b>NAME</b>
+    Maximus Ghosh - <b class="text-red">aspiring developer and designer</b>
+
+<b>SYNOPSIS</b>
+    Maximus [<b class="text-red">3rd Year CS</b>][UX Design Minor][CO-OP][Creative][Problem Solver]
+
+<b>DESCRIPTION</b>
+    <span class="text-red">Maximus</span> is a <span class="text-red">3rd year computer science student</span> pursuing a Bachelor
+    of Science with a minor in UX Design. As a co-op student seeking 
+    Fall 2024 placement, he balances coding, design, and other hands-on 
+    projects with his school work. Maximus is passionate about creating
+    user-friendly websites, apps, and systems. 
+
+    He enjoys implementing various tools and technologies to bring his
+    visions to life. His hobbies include reading fantasy-fiction, exploring
+    popular design trends, and identifying new things to code. 
+
+    Maximus is <span class="text-red">currently focusing on</span>:
+
+    ⚔︎ expanding his design tools 
+    ⚔︎ increasing his programming skills
+    ⚔︎ Extracurricular activities that develop leadership and collaboration skills. 
+
+<b>TECHNICAL SKILLS</b> 
+    Currently, Maximus has obtained the following skills:
+
+    ⚔︎ programming languages [<span class="text-red">C, Java, Python</span>]
+    ⚔︎ design tools [<span class="text-red">Adobe Creative Suite, Figma</span>]
+    ⚔︎ software proficiency [<span class="text-red">Google Suite, Microsoft Suite</span>]
+<b>EDUCATION</b>
+    wilfrid laurier university, [waterloo, ON]
+        bachelor of science [major in computer science][minor in ux design][2022-2026]
+    st roch catholic secondary school of arts [brampton, ON]
+        ontario secondary school diploma [honours in media arts][2018-2022]
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="content-section">
+        <div class="container">
+            <h1 class="section-title">projects</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <!-- Project 1 -->
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/proj1.png" alt="Project One" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title">CoConnect</h2>
+                        <p class="project-subtitle">using elements of everyday life for university students to promote bonding and relationship-building</p>
+                        <div class="btn-container">
+                            <a href="https://maximusghosh.notion.site/CoConnect-8660eae3343b423b8203d002855d8009?pvs=4" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
+                            <a href="https://www.figma.com/proto/CInzxmgAXQ6r9ZkA9bOzfI/UXL-designathon?node-id=40-481&t=ETV3HSm5Th6XPtfU-1" class="btn btn-color-2 project-btn" target="_blank">figma demo</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/mancalaHD.png" alt="Project Two" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title">Mancala</h2>
+                        <p class="project-subtitle">mancala game coded in prolog that supports player vs player & player vs AI</p>
+                        <div class="btn-container">
+                            <a href="./assets/Mancala_Report.pdf" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
+                            <a href="https://github.com/maxxxiki/mancala" class="btn btn-color-2 project-btn" target="_blank">github</a>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project3_img.png" alt="Project Three" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title">Website Portfolio</h2>
+                        <p class="project-subtitle">a digital version of my resume, showcasing my skills and personality</p>
+                        <div class="btn-container">
+                            <a href="#" class="btn btn-color-2 project-btn" target="_blank">Figma</a>
+                            <a href="#" class="btn btn-color-2 project-btn" target="_blank">Interactive Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-title ancient-font">Lets Connect.</h2>
+                <ul class="contact-list">
+                    <li><a href="https://www.linkedin.com/in/maximus-ghosh-b7234b237/" target="_blank">linkedin</a></li>
+                    <li><a href="https://github.com/maxxxiki" target="_blank">github</a></li>
+                    <li><a href="mailto:contactmaximusghosh@gmail.com" target="_blank">contactmaximusghosh@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2024 Maximus Ghosh</p>
+            <p>BY MAXIMUS GHOSH.</p>
+            <p>made with $1 iced coffees & love.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="script.js"></script>
+</body>
+</html>

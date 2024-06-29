@@ -1,0 +1,86 @@
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Header styles */
+    header {
+        padding: 10px 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    #center-nav {
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+        margin-top: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Main container styles */
+    .title {
+        font-size: 3em;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .title-part-left, .title-part-right {
+        transform: translateX(0);
+    }
+
+    .right-images {
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    /* About section styles */
+    .about-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-left, .about-right {
+        width: 100%;
+        max-width: none;
+        border: none;
+    }
+
+    .about-left {
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        padding: 0;
+    }
+
+    /* Projects section styles */
+    .details-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Footer styles */
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-title {
+        font-size: 3rem;
+    }
+
+    .footer-left h2 {
+        font-size: 2rem;
+    }
+
+    .contact-list li {
+        margin: 0.5rem 0;
+    }
+}

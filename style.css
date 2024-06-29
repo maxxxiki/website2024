@@ -1,0 +1,569 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Custom font face */
+@font-face {
+    font-family: 'AncientModernTales';
+    src: url('./assets/fonts/AncientModernTales-a7Po.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url('./assets/background-image.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'JetBrains Mono', monospace;
+    color: black;
+}
+
+/* Noisy canvas background */
+#noisyCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Loading screen styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.pixel-loader {
+    display: flex;
+    gap: 5px;
+}
+
+.pixel {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    animation: pixelAnimation 1s infinite alternate;
+}
+
+.pixel:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.pixel:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pixel:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.pixel:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pixelAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center; /* Center the header content */
+    align-items: center;
+    padding: 3px 0;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    position: relative;  /* Ensure the container has a position */
+}
+
+#center-nav {
+    position: absolute;  /* Position the center navigation absolutely */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#right-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;  /* Center the navigation links */
+    width: 100%;  /* Take full width of the container */
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    color: rgb(255, 0, 0);
+}
+
+/* Main container styles */
+.container {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title styles */
+.title {
+    font-family: 'AncientModernTales', monospace;
+    font-size: 8em;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    cursor: default;
+    animation: bounce 1.5s infinite steps(2);
+    display: flex;
+    flex-direction: row; /* To place title and images in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.title-part-left {
+    display: inline-block;
+    transform: translateX(-70px);
+}
+
+.title-part-right {
+    display: inline-block;
+    transform: translateX(70px);
+}
+
+.subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    align-self: center;
+    font-size: .5em;
+    margin-top: 10px;
+}
+
+.right-images {
+    position: relative; /* Use relative positioning for the container */
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center;
+    margin-left: 0px; /* Adjust spacing between title and images */
+}
+
+.decor-image {
+    position: absolute; /* Use absolute positioning for the images */
+}
+
+/* Individual star styling */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Added styles for the subtitle */
+.subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: lighter;
+    font-size: 1.5em; /* Adjust size as needed */
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+
+.large-star {
+    width: 300px;
+    top: -200px;
+    left: -50px;
+}
+
+.medium-star {
+    width: 350px;
+    top: -230px; /* Adjust to overlap with the large star */
+    left: -78px; /* Adjust to overlap with the large star */
+}
+
+.small-star {
+    width: 275px;
+    top: -175px; /* Adjust to overlap with the medium star */
+    left: -35px; /* Adjust to overlap with the medium star */
+}
+
+/* Section styles */
+.content-section {
+    padding: 40px 0;
+    text-align: center;
+    height: 100vh;
+}
+
+#about, #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+#about h1, #about h2, #about p,
+#resume h1, #resume p,
+#projects h1, #projects p {
+    text-align: center;
+    font-weight: 400;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#about h1, #resume h1, #projects h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#about h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+#about p, #resume p, #projects p {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.contact-info {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.availability {
+    color: grey;
+}
+
+.content-logo {
+    margin-bottom: 20px;
+}
+
+#about {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.about-content {
+    display: flex;
+    width: 115%;
+    padding: 0px;
+    position: center;
+}
+
+.about-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    max-width: 50%; /* Set a maximum width for the left box */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.profile-pic {
+    width: 60%;
+    height: auto;
+}
+
+.about-right {
+    flex: 1;
+    padding-left: 20px;
+    font-size: 1rem;
+    border: 1px solid black;
+    transform: translateX(20px);
+}
+
+.about-text {
+    text-align: left;
+    white-space: pre-wrap;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgb(85, 85, 85);
+    padding: -30px;
+}
+
+.section-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-title {
+    font-size: 50px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+}
+
+/* Projects Section */
+.experience-details-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-containers {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid black;
+    text-align: center;
+    width: 25%;
+    min-height: 400px; /* Set a minimum height to ensure alignment */
+}
+
+.article-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Set a fixed height for the image container */
+    margin-bottom: 1rem;
+}
+
+.project-img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure the image fits within the container */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.project-title {
+    margin: 1rem;
+    font-size: 1.5em;
+}
+
+.project-subtitle {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+}
+
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top:auto; /* Ensure buttons are aligned at the bottom */
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(163,163,163);
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.btn:hover {
+    background: rgb(53,53,53);
+    color: white;
+}
+
+.btn-color-2 {
+    border: 1px solid rgb(163,163,163);
+}
+
+.btn-color-2:hover {
+    background: rgb(53,53,53);
+    color: white;
+}
+
+.ancient-font {
+    font-family: 'AncientModernTales', monospace;
+}
+
+/* Footer styles */
+footer {
+    background-color: #e0e0e0;
+    padding: 0.2rem 1rem;
+    color: #333;
+    font-family: 'JetBrains Mono', monospace; /* Keep JetBrains Mono as the default font for the footer */
+}
+
+.footer-title {
+    font-size: 10rem;
+    margin-bottom: 0.2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-left {
+    max-width: 80%;
+}
+
+.footer-left h2 {
+    font-size: 4rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 0.5rem 0;
+}
+
+.contact-list a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #ff0000;
+}
+
+.footer-right img {
+    max-width: 100px;
+    height: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+}
+
+/* Custom text color */
+.text-red {
+    color: red;
+}
+
+
+
+/* Add mobile-friendly menu icon */
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.hamburger-icon.open div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.open div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* For mobile view, show hamburger menu icon */
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
