@@ -13,6 +13,7 @@
 
     .logo {
         margin-bottom: 0;
+        left:40px;
         order: 0; /* Ensure the logo is on the left */
     }
 
@@ -20,6 +21,7 @@
         display: flex;
         order: 2; /* Ensure the hamburger menu is on the right */
         margin-top: 3px;
+        right:40px;
         align-items: auto; /* Center the X icon vertically */
     }
 
