@@ -19,15 +19,13 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background: url('./assets/background-image.png') no-repeat center center fixed;
-    background-size: cover;
     font-family: 'JetBrains Mono', monospace;
     color: black;
 }
 
 /* Noisy canvas background */
 #noisyCanvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -230,7 +228,6 @@ header {
     margin-top: 20px; /* Adjust spacing as needed */
 }
 
-
 .large-star {
     width: 300px;
     top: -200px;
@@ -254,6 +251,8 @@ header {
     padding: 40px 0;
     text-align: center;
     height: 100vh;
+    position: relative; /* Ensure sections are positioned correctly */
+    z-index: 1; /* Ensure sections appear above the noisy canvas */
 }
 
 #about, #projects {
@@ -519,24 +518,36 @@ footer {
     color: red;
 }
 
-
-
-/* Add mobile-friendly menu icon */
 .hamburger-icon {
     display: none;
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    align-items: center; /* Center the divs horizontally */
+    justify-content: center; /* Center the divs vertically */
+    height: 24px; /* Set a height to ensure centering */
+    position: relative; /* Change to relative to fix positioning issues */
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center; /* Center the divs horizontally */
+    justify-content: center; /* Center the divs vertically */
+    height: 24px; /* Set a height to ensure centering */
+    position: absolute; /* Position absolutely within header */
+    right: 20px; /* Adjust right position to move it left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical centering */
 }
 
 .hamburger-icon div {
     width: 25px;
     height: 3px;
     background-color: black;
-}
-
-.nav-links.open {
-    display: flex;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for top and bottom */
 }
 
 .hamburger-icon.open div:nth-child(1) {
@@ -555,6 +566,10 @@ footer {
 @media (max-width: 768px) {
     .hamburger-icon {
         display: flex;
+        position: absolute;
+        right: 20px; /* Adjust right position to move it left */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust vertical centering */
     }
 
     .nav-links {

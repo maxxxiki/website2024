@@ -3,7 +3,7 @@ function generateSubtleNoise(ctx, width, height) {
     const data = imageData.data;
 
     for (let i = 0; i < data.length; i += 4) {
-        const shade = 245 + Math.random() * 35;
+        const shade = 240 + Math.random() * 40; // Lower the base shade to make it darker
         data[i] = shade;
         data[i + 1] = shade;
         data[i + 2] = shade;

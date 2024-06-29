@@ -2,24 +2,25 @@
 @media (max-width: 768px) {
     /* Header styles */
     header {
-        padding: 10px 0;
+        padding: 5px 0;
     }
 
     .header-container {
-        flex-direction: column;
-        padding: 0 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 5px;
     }
 
-    #center-nav {
-        position: relative;
-        left: 0;
-        transform: translateX(0);
-        margin-top: 10px;
+    .logo {
+        margin-bottom: 0;
+        order: 0; /* Ensure the logo is on the left */
     }
 
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
+    .hamburger-icon {
+        display: flex;
+        order: 2; /* Ensure the hamburger menu is on the right */
+        margin-top: 3px;
+        align-items: auto; /* Center the X icon vertically */
     }
 
     /* Main container styles */
@@ -31,43 +32,92 @@
 
     .title-part-left, .title-part-right {
         transform: translateX(0);
+        font-size: 1.5em; /* Adjust font size for mobile */
+        text-align: center; /* Center text on mobile */
     }
 
     .right-images {
-        display: none;
+        height: auto;
+        width: 30%;
+    }
+
+    .large-star {
+        width: 100px; /* Adjust the size for mobile */
+        top: -130px;
+        left: 110px;
+    }
+
+    .medium-star {
+        width: 120px; /* Adjust the size for mobile */
+        top: -140px;
+        left: 100px;
+    }
+
+    .small-star {
+        width: 80px; /* Adjust the size for mobile */
+        top: -110px;
+        left: 120px;
     }
 
     .subtitle {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     /* About section styles */
+    #about {
+        padding-top: 700px; /* Original padding */
+    }
+
     .about-content {
         flex-direction: column;
-        width: 100%;
+        width: 100%; /* Ensure the width fits within the screen */
+        align-items: center;
     }
 
     .about-left, .about-right {
-        width: 100%;
+        width: 125%;
         max-width: none;
         border: none;
     }
 
     .about-left {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+    .about-right {
+        text-align: left;
+        padding-left: 10px;
+        margin-right: 10px; /* Ensure the text is aligned properly */
     }
 
     .about-text {
-        padding: 0;
+        font-size: 0.8rem;
+        margin-right:30px; /* Adjust font size for readability */
+        padding: 0 10px; /* Add padding for better spacing */
     }
 
     /* Projects section styles */
+    #projects {
+        margin-top: 1100px; /* Original margin */
+        padding-top: 20px; /* Adjust padding as needed */
+    }
+
+    .experience-details-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .details-container {
         width: 100%;
         margin-bottom: 20px;
     }
 
     /* Footer styles */
+    footer {
+        margin-top: 500px; /* Increased margin to move footer lower */
+        padding-top: 20px; /* Adjust padding as needed */
+    }
+
     .footer-container {
         flex-direction: column;
     }
@@ -82,5 +132,10 @@
 
     .contact-list li {
         margin: 0.5rem 0;
+    }
+
+    /* General section spacing */
+    .content-section {
+        padding-top: 20px; /* Adjust padding as needed */
     }
 }
