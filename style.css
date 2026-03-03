@@ -322,15 +322,15 @@ header {
 .about-left {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    max-width: 50%; /* Set a maximum width for the left box */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    align-items: stretch;
+    max-width: 50%;
+    box-sizing: border-box;
 }
 
 .profile-pic {
-    width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-right {
