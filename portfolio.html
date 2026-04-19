@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <!-- Loading screen with pixel loader animation -->
+    <!-- Loading screen -->
     <div id="loading-screen">
         <div class="pixel-loader">
             <div class="pixel"></div>
@@ -20,10 +20,10 @@
         </div>
     </div>
 
-    <!-- Canvas element for noisy background effect -->
+    <!-- Noisy background canvas -->
     <canvas id="noisyCanvas"></canvas>
 
-    <!-- Header section -->
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -51,40 +51,79 @@
         </div>
     </header>
 
-    <!-- Portfolio / Projects section -->
-    <section id="projects" class="content-section portfolio-page">
-        <div class="container">
-            <h1 class="section-title">portfolio</h1>
-            <div class="experience-details-container">
-                <div class="about-containers">
-                    <div class="details-container color-container">
-                        <div class="article-container">
-                            <img src="./assets/proj1.png" alt="Project One" class="project-img">
+    <!-- Sidebar -->
+    <div id="portfolio-sidebar" class="portfolio-sidebar">
+        <button class="sidebar-close" id="sidebar-close">&#10005;</button>
+        <div class="sidebar-content" id="sidebar-content"></div>
+    </div>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Portfolio page -->
+    <main class="portfolio-page">
+        <div class="portfolio-inner">
+            <h1 class="portfolio-page-title">portfolio</h1>
+
+            <!-- Projects -->
+            <div class="portfolio-category">
+                <h2 class="category-label">projects</h2>
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-item"
+                        data-title="CoConnect"
+                        data-desc="Using elements of everyday life for university students to promote bonding and relationship-building. Designed as part of a UX designathon, CoConnect reimagines casual social interaction on campus."
+                        data-links='[{"label":"write-up","url":"https://maximusghosh.notion.site/CoConnect-8660eae3343b423b8203d002855d8009?pvs=4"},{"label":"figma demo","url":"https://www.figma.com/proto/CInzxmgAXQ6r9ZkA9bOzfI/UXL-designathon?node-id=40-481&t=ETV3HSm5Th6XPtfU-1"}]'
+                        data-thumb="./assets/proj1.png">
+                        <div class="item-thumb">
+                            <img src="./assets/proj1.png" alt="CoConnect">
                         </div>
-                        <h2 class="experience-sub-title project-title">CoConnect</h2>
-                        <p class="project-subtitle">using elements of everyday life for university students to promote bonding and relationship-building</p>
-                        <div class="btn-container">
-                            <a href="https://maximusghosh.notion.site/CoConnect-8660eae3343b423b8203d002855d8009?pvs=4" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
-                            <a href="https://www.figma.com/proto/CInzxmgAXQ6r9ZkA9bOzfI/UXL-designathon?node-id=40-481&t=ETV3HSm5Th6XPtfU-1" class="btn btn-color-2 project-btn" target="_blank">figma demo</a>
-                        </div>
+                        <span class="item-label">CoConnect</span>
                     </div>
-                    <div class="details-container color-container">
-                        <div class="article-container">
-                            <img src="./assets/mancalaHD.png" alt="Project Two" class="project-img">
+
+                    <div class="portfolio-item"
+                        data-title="Mancala"
+                        data-desc="Mancala coded in Prolog supporting player vs player and player vs AI. Features two AI difficulties: a random easy bot and a hard bot using MiniMax search with a depth of 5."
+                        data-links='[{"label":"write-up","url":"./assets/Mancala_Report.pdf"},{"label":"github","url":"https://github.com/maxxxiki/mancala"}]'
+                        data-thumb="./assets/mancalaHD.png">
+                        <div class="item-thumb">
+                            <img src="./assets/mancalaHD.png" alt="Mancala">
                         </div>
-                        <h2 class="experience-sub-title project-title">Mancala</h2>
-                        <p class="project-subtitle">mancala game coded in prolog that supports player vs player & player vs AI</p>
-                        <div class="btn-container">
-                            <a href="./assets/Mancala_Report.pdf" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
-                            <a href="https://github.com/maxxxiki/mancala" class="btn btn-color-2 project-btn" target="_blank">github</a>
-                        </div>
+                        <span class="item-label">Mancala</span>
                     </div>
+
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer section -->
+            <!-- Videos -->
+            <div class="portfolio-category">
+                <h2 class="category-label">videos</h2>
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-item"
+                        data-title="Pick of The Litter"
+                        data-desc="A short video production — add your description here."
+                        data-links='[]'
+                        data-vimeo='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1184604099?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Pick of The Litter"></iframe></div>'>
+                        <div class="item-thumb item-thumb--video">
+                            <div class="video-play-icon">&#9654;</div>
+                        </div>
+                        <span class="item-label">Pick of The Litter</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Graphics -->
+            <div class="portfolio-category">
+                <h2 class="category-label">graphics</h2>
+                <div class="portfolio-grid">
+                    <p class="category-empty">coming soon.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -104,5 +143,67 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const items = document.querySelectorAll('.portfolio-item');
+        const sidebar = document.getElementById('portfolio-sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const closeBtn = document.getElementById('sidebar-close');
+        const sidebarContent = document.getElementById('sidebar-content');
+
+        function openSidebar(item) {
+            const title = item.dataset.title;
+            const desc = item.dataset.desc;
+            const links = JSON.parse(item.dataset.links || '[]');
+            const vimeo = item.dataset.vimeo || null;
+            const thumb = item.dataset.thumb || null;
+
+            let linksHTML = '';
+            if (links.length) {
+                linksHTML = '<div class="sidebar-links">' +
+                    links.map(l => `<a href="${l.url}" class="btn btn-color-2" target="_blank">${l.label}</a>`).join('') +
+                    '</div>';
+            }
+
+            let mediaHTML = '';
+            if (vimeo) {
+                mediaHTML = `<div class="sidebar-video">${vimeo}</div>`;
+            } else if (thumb) {
+                mediaHTML = `<img src="${thumb}" class="sidebar-img" alt="${title}">`;
+            }
+
+            sidebarContent.innerHTML = `
+                <h2 class="sidebar-title">${title}</h2>
+                ${mediaHTML}
+                <p class="sidebar-desc">${desc}</p>
+                ${linksHTML}
+            `;
+
+            // Inject Vimeo player script if not already present
+            if (vimeo && !document.querySelector('script[src="https://player.vimeo.com/api/player.js"]')) {
+                const s = document.createElement('script');
+                s.src = 'https://player.vimeo.com/api/player.js';
+                document.body.appendChild(s);
+            }
+
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+            document.body.classList.add('sidebar-active');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.classList.remove('sidebar-active');
+            sidebarContent.innerHTML = '';
+        }
+
+        items.forEach(item => item.addEventListener('click', () => openSidebar(item)));
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeSidebar();
+        });
+    </script>
 </body>
 </html>
