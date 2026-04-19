@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maximus ghosh's portfolio</title>
+    <link rel="icon" type="image/png" href="./assets/starlogo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <!-- Loading screen with pixel loader animation -->
+    <div id="loading-screen">
+        <div class="pixel-loader">
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+            <div class="pixel"></div>
+        </div>
+    </div>
+
+    <!-- Canvas element for noisy background effect -->
+    <canvas id="noisyCanvas"></canvas>
+
+    <!-- Header section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo.png" alt="Maximus Ghosh">
+                </a>
+            </div>
+            <nav id="center-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html#about">about</a></li>
+                    <li><a href="portfolio.html">portfolio</a></li>
+                </ul>
+            </nav>
+            <nav id="right-nav">
+                <ul class="nav-links">
+                    <li><a href="https://www.linkedin.com/in/maximus-ghosh-b7234b237/" target="_blank">linkedin</a></li>
+                    <li><a href="./assets/MaximusGhosh_Resume.pdf" target="_blank">resume</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio / Projects section -->
+    <section id="projects" class="content-section portfolio-page">
+        <div class="container">
+            <h1 class="section-title">portfolio</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/proj1.png" alt="Project One" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title">CoConnect</h2>
+                        <p class="project-subtitle">using elements of everyday life for university students to promote bonding and relationship-building</p>
+                        <div class="btn-container">
+                            <a href="https://maximusghosh.notion.site/CoConnect-8660eae3343b423b8203d002855d8009?pvs=4" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
+                            <a href="https://www.figma.com/proto/CInzxmgAXQ6r9ZkA9bOzfI/UXL-designathon?node-id=40-481&t=ETV3HSm5Th6XPtfU-1" class="btn btn-color-2 project-btn" target="_blank">figma demo</a>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/mancalaHD.png" alt="Project Two" class="project-img">
+                        </div>
+                        <h2 class="experience-sub-title project-title">Mancala</h2>
+                        <p class="project-subtitle">mancala game coded in prolog that supports player vs player & player vs AI</p>
+                        <div class="btn-container">
+                            <a href="./assets/Mancala_Report.pdf" class="btn btn-color-2 project-btn" target="_blank">write-up</a>
+                            <a href="https://github.com/maxxxiki/mancala" class="btn btn-color-2 project-btn" target="_blank">github</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-title ancient-font">Lets Connect.</h2>
+                <ul class="contact-list">
+                    <li><a href="https://www.linkedin.com/in/maximus-ghosh-b7234b237/" target="_blank">linkedin</a></li>
+                    <li><a href="https://github.com/maxxxiki" target="_blank">github</a></li>
+                    <li><a href="mailto:contactmaximusghosh@gmail.com">contactmaximusghosh&#64;gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&#169; 2026 Maximus Ghosh</p>
+            <p>BY MAXIMUS GHOSH.</p>
+            <p>made with $1 iced coffees & love.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
