@@ -51,12 +51,13 @@
         </div>
     </header>
 
-    <!-- Sidebar -->
-    <div id="portfolio-sidebar" class="portfolio-sidebar">
-        <button class="sidebar-close" id="sidebar-close">&#10005;</button>
-        <div class="sidebar-content" id="sidebar-content"></div>
+    <!-- Modal -->
+    <div id="portfolio-modal-overlay" class="modal-overlay">
+        <div id="portfolio-modal" class="modal-box">
+            <button class="modal-close" id="modal-close">&#10005;</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
     </div>
-    <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <!-- Portfolio page -->
     <main class="portfolio-page">
@@ -70,7 +71,7 @@
 
                     <div class="portfolio-item"
                         data-title="CoConnect"
-                        data-desc="Using elements of everyday life for university students to promote bonding and relationship-building. Designed as part of a UX designathon, CoConnect reimagines casual social interaction on campus."
+                        data-desc="2024"
                         data-links='[{"label":"write-up","url":"https://maximusghosh.notion.site/CoConnect-8660eae3343b423b8203d002855d8009?pvs=4"},{"label":"figma demo","url":"https://www.figma.com/proto/CInzxmgAXQ6r9ZkA9bOzfI/UXL-designathon?node-id=40-481&t=ETV3HSm5Th6XPtfU-1"}]'
                         data-thumb="./assets/proj1.png">
                         <div class="item-thumb">
@@ -81,7 +82,7 @@
 
                     <div class="portfolio-item"
                         data-title="Mancala"
-                        data-desc="Mancala coded in Prolog supporting player vs player and player vs AI. Features two AI difficulties: a random easy bot and a hard bot using MiniMax search with a depth of 5."
+                        data-desc="2024"
                         data-links='[{"label":"write-up","url":"./assets/Mancala_Report.pdf"},{"label":"github","url":"https://github.com/maxxxiki/mancala"}]'
                         data-thumb="./assets/mancalaHD.png">
                         <div class="item-thumb">
@@ -100,13 +101,24 @@
 
                     <div class="portfolio-item"
                         data-title="Pick of The Litter"
-                        data-desc="A short video production — add your description here."
+                        data-desc="2022"
                         data-links='[]'
                         data-vimeo='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1184604099?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Pick of The Litter"></iframe></div>'>
                         <div class="item-thumb item-thumb--video">
                             <div class="video-play-icon">&#9654;</div>
                         </div>
                         <span class="item-label">Pick of The Litter</span>
+                    </div>
+
+                    <div class="portfolio-item"
+                        data-title="Time"
+                        data-desc="2021"
+                        data-links='[]'
+                        data-vimeo='<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1184617067?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TimeCaptions"></iframe></div>'>
+                        <div class="item-thumb item-thumb--video">
+                            <div class="video-play-icon">&#9654;</div>
+                        </div>
+                        <span class="item-label">Time</span>
                     </div>
 
                 </div>
@@ -144,65 +156,67 @@
 
     <script src="script.js"></script>
     <script>
-        const items = document.querySelectorAll('.portfolio-item');
-        const sidebar = document.getElementById('portfolio-sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
-        const closeBtn = document.getElementById('sidebar-close');
-        const sidebarContent = document.getElementById('sidebar-content');
+        const items       = document.querySelectorAll('.portfolio-item');
+        const overlay     = document.getElementById('portfolio-modal-overlay');
+        const modal       = document.getElementById('portfolio-modal');
+        const closeBtn    = document.getElementById('modal-close');
+        const modalContent = document.getElementById('modal-content');
 
-        function openSidebar(item) {
+        function openModal(item) {
             const title = item.dataset.title;
-            const desc = item.dataset.desc;
+            const desc  = item.dataset.desc;
             const links = JSON.parse(item.dataset.links || '[]');
             const vimeo = item.dataset.vimeo || null;
             const thumb = item.dataset.thumb || null;
 
+            let mediaHTML = '';
+            if (vimeo) {
+                mediaHTML = `<div class="modal-video">${vimeo}</div>`;
+            } else if (thumb) {
+                mediaHTML = `<img src="${thumb}" class="modal-img" alt="${title}">`;
+            }
+
             let linksHTML = '';
             if (links.length) {
-                linksHTML = '<div class="sidebar-links">' +
-                    links.map(l => `<a href="${l.url}" class="btn btn-color-2" target="_blank">${l.label}</a>`).join('') +
+                linksHTML = '<div class="modal-links">' +
+                    links.map(l =>
+                        `<a href="${l.url}" class="btn btn-color-2" target="_blank">${l.label}</a>`
+                    ).join('') +
                     '</div>';
             }
 
-            let mediaHTML = '';
-            if (vimeo) {
-                mediaHTML = `<div class="sidebar-video">${vimeo}</div>`;
-            } else if (thumb) {
-                mediaHTML = `<img src="${thumb}" class="sidebar-img" alt="${title}">`;
-            }
-
-            sidebarContent.innerHTML = `
-                <h2 class="sidebar-title">${title}</h2>
+            modalContent.innerHTML = `
+                <h2 class="modal-title">${title}</h2>
                 ${mediaHTML}
-                <p class="sidebar-desc">${desc}</p>
+                <p class="modal-desc">${desc}</p>
                 ${linksHTML}
             `;
 
-            // Inject Vimeo player script if not already present
+            // Inject Vimeo player.js once
             if (vimeo && !document.querySelector('script[src="https://player.vimeo.com/api/player.js"]')) {
                 const s = document.createElement('script');
                 s.src = 'https://player.vimeo.com/api/player.js';
                 document.body.appendChild(s);
             }
 
-            sidebar.classList.add('open');
             overlay.classList.add('open');
-            document.body.classList.add('sidebar-active');
+            document.body.classList.add('modal-active');
         }
 
-        function closeSidebar() {
-            sidebar.classList.remove('open');
+        function closeModal() {
             overlay.classList.remove('open');
-            document.body.classList.remove('sidebar-active');
-            sidebarContent.innerHTML = '';
+            document.body.classList.remove('modal-active');
+            // Clear content to stop video playback
+            modalContent.innerHTML = '';
         }
 
-        items.forEach(item => item.addEventListener('click', () => openSidebar(item)));
-        closeBtn.addEventListener('click', closeSidebar);
-        overlay.addEventListener('click', closeSidebar);
-
+        items.forEach(item => item.addEventListener('click', () => openModal(item)));
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) closeModal();
+        });
         document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') closeSidebar();
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
