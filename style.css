@@ -592,19 +592,6 @@ footer {
     }
 }
 
-/* Portfolio standalone page */
-.portfolio-page {
-    min-height: 100vh;
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-
 /* ── Portfolio page layout ── */
 .portfolio-page {
     min-height: 100vh;
@@ -712,30 +699,43 @@ footer {
     transition: color 0.2s ease;
 }
 
-/* ── Sidebar ── */
-.portfolio-sidebar {
+/* ── Modal overlay ── */
+.modal-overlay {
+    display: none;
     position: fixed;
-    top: 0;
-    right: -480px;
-    width: 440px;
-    height: 100%;
-    background: white;
-    border-left: 1px solid black;
-    z-index: 200;
-    overflow-y: auto;
-    padding: 60px 32px 40px;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
     box-sizing: border-box;
-    transition: right 0.35s ease;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
-.portfolio-sidebar.open {
-    right: 0;
+.modal-overlay.open {
+    display: flex;
+    opacity: 1;
 }
 
-.sidebar-close {
+/* ── Modal box ── */
+.modal-box {
+    position: relative;
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 48px 40px 36px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.modal-close {
     position: absolute;
-    top: 18px;
-    right: 20px;
+    top: 14px;
+    right: 18px;
     background: none;
     border: none;
     font-size: 1.1rem;
@@ -743,20 +743,45 @@ footer {
     font-family: 'JetBrains Mono', monospace;
     color: black;
     padding: 4px 8px;
+    line-height: 1;
 }
 
-.sidebar-close:hover {
+.modal-close:hover {
     color: red;
 }
 
-.sidebar-title {
+.modal-title {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 400;
     font-size: 1.4rem;
     margin: 0 0 20px;
 }
 
-.sidebar-img {
+/* Video embed — sized to give Vimeo controls enough room */
+.modal-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-bottom: 20px;
+    background: #000;
+}
+
+.modal-video > div {
+    position: absolute !important;
+    inset: 0;
+    padding: 0 !important;
+}
+
+.modal-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.modal-img {
     width: 100%;
     height: auto;
     display: block;
@@ -764,13 +789,7 @@ footer {
     border: 1px solid rgb(200, 200, 200);
 }
 
-.sidebar-video {
-    width: 100%;
-    padding-bottom: 0;
-    margin-bottom: 20px;
-}
-
-.sidebar-desc {
+.modal-desc {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.88rem;
     color: rgb(85, 85, 85);
@@ -778,25 +797,12 @@ footer {
     margin-bottom: 24px;
 }
 
-.sidebar-links {
+.modal-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-/* ── Overlay ── */
-.sidebar-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.25);
-    z-index: 199;
-}
-
-.sidebar-overlay.open {
-    display: block;
-}
-
-body.sidebar-active {
+body.modal-active {
     overflow: hidden;
 }
